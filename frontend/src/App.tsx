@@ -7,7 +7,7 @@ function App() {
     fetch('http://localhost:8000/api/trending')
       .then(res => res.json())
       .then(data => setBackendMessage(data.message))
-      .catch(err => setBackendMessage('Error connecting to backend'))
+      .catch(err => setBackendMessage(JSON.stringify(err) + 'Error connecting to backend'))
   }, [])
 
   return (
