@@ -2,3 +2,6 @@ fastapi
 uvicorn[standard]
 beautifulsoup4
 playwright
+pydantic-settings
+sqlalchemy
+psycopg2-binary
