@@ -4,8 +4,8 @@ function App() {
   const [backendMessage, setBackendMessage] = useState<string>('Loading...')
 
   useEffect(() => {
-    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
-    fetch(`${API_URL}/api/trending`)
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/';
+    fetch(`${API_URL}api/trending`)
       .then(res => res.json())
       .then(data => setBackendMessage(data.message || JSON.stringify(data[0]) || 'No message received from backend'))
       .catch(err => setBackendMessage(JSON.stringify(err) + 'Error connecting to backend'))
